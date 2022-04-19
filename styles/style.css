@@ -1,1 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+/*Definiowanie zmiennych w pseudoklasie :root, czyli w głównym węźle dokumentu*/
+:root {
+  --primary-color: #1C4094;
+}
