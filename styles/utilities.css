@@ -166,3 +166,50 @@
 .px-2 {
   padding: 0 1.5rem;
 }
+
+/*responsiveness*/
+@media(max-width: 992px) {
+  .btn {
+    font-size: 1rem;
+  }
+  .text-sm {
+    font-size: 14px;
+  }
+
+  .text-md {
+    font-size: 1rem;
+  }
+
+  .text-lg {
+    font-size: 1.5rem;
+  }
+
+  .text-xl {
+    font-size: 1.75rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/*animations*/
+@keyframes slide-from-left {
+  from {
+    transform: translatex(-100%);
+  }
+  to {
+    transition: translatex(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translatex(100%);
+  }
+  to {
+    transition: translatex(0);
+  }
+}

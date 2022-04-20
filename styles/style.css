@@ -1,3 +1,4 @@
+/*importowanie rodziny czcionki o różnych grubościach*/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 /*Definiowanie zmiennych w pseudoklasie :root, czyli w głównym węźle dokumentu*/
 :root {
@@ -77,4 +78,276 @@ header a:hover {
 
 .header-navigation--mobile {
   display: none;
+}
+
+/*menu mobile*/
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.navigation-mobile-content {
+  position: absolute;
+  border-radius: 20px 0 20px 20px;
+  top: 100%;
+  right: 5%;
+  width: 90%;
+  height: auto;
+  background-color: var(--light-color);
+  padding: 20px;
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+input[type="checkbox"]:checked~label~.navigation-mobile-content {
+  opacity: 1;
+  z-index: 1;
+}
+
+.navigation-mobile-content ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-mobile-content a {
+  display: block;
+  border: none;
+  padding: 10px 0;
+}
+
+/*main showcase*/
+.showcase {
+  background-image: linear-gradient(to right, #E6ECF9, #99A2B6);
+  margin: 0 20px;
+  border-radius: 0 0 40px 40px;
+}
+.showcase h1 {
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+.showcase p {
+  margin: 40px 0;
+}
+
+.showcase .grid {
+  grid-template-columns: 45% 55%;
+  grid-gap: 30px;
+}
+
+.showcase-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-links a {
+  margin-right: 25px;
+}
+
+.showcase-text {
+  animation: slide-from-left 0.5s ease-in;
+}
+
+.showcase img {
+  animation: slide-from-right 0.5s ease-in;
+}
+
+/*main clients*/
+.clients {
+  padding: 100px 0;
+}
+
+.clients .flex {
+  justify-content: space-around;
+  margin: 80px 0;
+}
+
+.clients .grid {
+  padding: 0 60px;
+  grid-gap: 40px;
+}
+
+/*main offer*/
+.offer {
+  background-color: var(--light-color);
+  padding: 100px 0;
+}
+
+.offer .grid {
+  grid-gap: 50px;
+}
+
+.offer p {
+  margin: 30px 0 50px;
+}
+
+/*main purposes*/
+.purposes {
+  padding: 100px 0;
+}
+
+.purposes img {
+  width: 80%;
+  justify-self: end;
+}
+
+.purposes a {
+  margin: 60px 0 0;
+}
+
+/*main join*/
+.join {
+  background-color: var(--light-color);
+  padding: 100px 0;
+}
+
+.join .flex {
+  flex-direction: column;
+  width: 60%;
+}
+
+.join a {
+  margin: 60px 0 0;
+}
+
+/*footer*/
+footer {
+  background-color: var(--light-color);
+  padding: 0 0 100px 0;
+}
+
+footer .container {
+  border-top: 1px solid var(--primary-color);
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+.footer-logo, .footer-info {
+  margin-top: 100px;
+}
+
+.footer-logo p, .footer-info p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.footer-info {
+  text-align: right;
+}
+
+/*responsiveness*/
+@media(max-width: 1280px) {
+  .showcase .grid {
+    grid-template-columns: 1fr;
+  }
+  .showcase img {
+    width: 60%;
+    justify-self: center;
+  }
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .clients .grid {
+    padding: 0;
+    grid-gap: 15px;
+  }
+}
+
+@media(max-width: 992px) {
+  p, a, div {
+    font-size: 16px;
+  }
+  .header-navigation, header .btn {
+    display: none;
+  }
+  .header-navigation--mobile, .header-navigation--mobile .btn {
+    display: block;
+  }
+  .showcase {
+    position: relative;
+    top: -1px;
+  }
+  .showcase h1 {
+    font-size: 28px;
+  }
+  .clients .flex {
+    justify-content: space-between;
+  }
+  .purposes img {
+    width: 100%
+  }
+  .join .flex {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
+  header{
+    margin: 10px 10px 0;
+    border-radius: 20px 20px 0 0;
+  }
+  header .logo {
+    width: 50%;
+  }
+  .showcase {
+    margin: 0 10px;
+    border-radius: 0 0 20px 20px;
+  }
+  .grid, .clients .grid, .offer .grid, .purposes .grid {
+    grid-template-columns: 1fr;
+  }
+  .showcase img {
+    width: 100%;
+    justify-self: center;
+  }
+  .clients {
+    padding: 40px 0;
+  }
+  .clients .flex {
+    margin: 40px 0;
+    align-items: center;
+  }
+  .clients img {
+    width: 70%;
+  }
+  .purposes, .join, .offer {
+    padding: 40px 0;
+    text-align: center;
+  }
+  .offer-item p {
+    margin: 0 0 30px;
+  }
+  .purposes img, .offer img {
+    justify-self: center;
+    width: 75%;
+  }
+  .join a {
+    margin: 20px 0 0;
+  }
+  footer .flex {
+    flex-direction: column;
+  }
+  .footer-logo, .footer-info {
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+
+@media(max-width: 576px) {
+  p, a, div {
+    font-size: 14px;
+  }
+  .showcase-links {
+    flex-direction: column;
+  }
+  .showcase-links a {
+    margin-right: 0px;
+  }
+  .showcase-links:first-child {
+    margin-bottom: 20px;
+  }
 }
